@@ -1,0 +1,275 @@
+body {
+  box-shadow: inset 0px 0px 45000px #0d73ea;
+}
+
+h3 {
+  font-family: "Montserrat";
+  margin: 0px auto 7px;
+}
+
+#StartingDiv {
+  display: flex;
+  height: 100vh;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#MainDiv {
+  border: 2px solid;
+  padding: 35px 25px;
+  width: 23vw;
+  height: fit-content;
+  border-radius: 40px;
+  box-shadow: 2px 2px 21px;
+  background: rgb(223, 240, 254);
+  z-index: 10;
+}
+
+.btn {
+  margin: 0px 17px;
+  border: 1.5px solid black;
+  padding: 6.5px 10px;
+  border-radius: 6px;
+  background-color: #88bbff;
+  transition: all 1s;
+  z-index: 0;
+}
+
+.btn:hover {
+  scale: 1.1;
+  cursor: pointer;
+  font-size: 13.5px;
+}
+
+.SelectDiv {
+  cursor: pointer;
+  width: 214.5px;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 5px 9px 9px;
+  background-color: #5fb6ff;
+  color: black;
+  margin-bottom: 1px;
+}
+
+.OptionDiv {
+  position: absolute;
+  height: fit-content;
+  padding: 0px;
+  width: 231.5px;
+  border: 1px solid black;
+  border-radius: 12px 0px 0px 12px;
+  background-color: #5fb6ff;
+  color: black;
+  z-index: 1;
+}
+
+.Options {
+  border-radius: 12px;
+  padding: 3px 8px 7px;
+  margin: 1px;
+  background-color: #5fb6ff;
+}
+
+.Options:hover {
+  cursor: pointer;
+  background-color: #2a69bc;
+  border: 1px solid #1f508f;
+  color: white;
+}
+
+#InputSources {
+  padding: 10px;
+}
+
+#InputSources::placeholder {
+  color: white;
+}
+
+#InputSources:focus {
+  outline: none;
+}
+
+.Input {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 5px;
+  width: 22vw;
+  height: 20px;
+  padding: 4px 7px;
+}
+
+#Alert {
+  /* visibility: hidden; It is getting applied dynamically.*/
+  word-break: break-word;
+  white-space: pre-wrap;
+  z-index: 20;
+  width: 30vw;
+  border: 1.4px solid black;
+  border-radius: 15px;
+  padding: 15px 40px 15px 15px;
+  position: fixed;
+  top: 10px;
+  left: 33vw;
+  color: black;
+}
+
+#Alert button:hover {
+  cursor: pointer;
+}
+
+#AlertUrl {
+  position: relative;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 7px;
+  background: #1f508f;
+  color: white;
+}
+
+@media (min-width: 1201px) and (max-width: 2000px) {
+  #MainDiv {
+    width: 35vw;
+  }
+
+  .Input {
+    width: 33.5vw;
+  }
+
+  #from {
+    width: 110px;
+  }
+
+  #FromTo {
+    margin: 0px 1.5vw;
+  }
+
+  #to {
+    width: 110px;
+  }
+}
+
+@media (min-width: 2000px) {
+  #MainDiv {
+    width: 40vw;
+    padding: 50px 40px;
+  }
+
+  .Input {
+    width: 39vw;
+  }
+
+  #from {
+    width: 150px;
+  }
+
+  #FromTo {
+    margin: 0px 5vw;
+  }
+
+  #to {
+    width: 150px;
+  }
+
+  .btn {
+    margin: 0px 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #MainDiv {
+    width: 50vw;
+  }
+
+  .Input {
+    width: 48vw;
+  }
+
+  .btn {
+    margin: 0px 3vw;
+    padding: 5px;
+  }
+
+  #from {
+    width: 110px;
+    margin: 0vw 1vw;
+  }
+
+  #FromTo {
+    margin: 0px 2vw;
+  }
+
+  #to {
+    width: 110px;
+    margin: 0vw 1vw;
+  }
+}
+
+@media (max-width: 760px) {
+  #StartingDiv {
+    height: 100vh;
+  }
+
+  #MainDiv {
+    width: 70vw;
+  }
+
+  .Input {
+    width: 65vw;
+  }
+
+  .btn {
+    margin: 0px 0.6vw;
+  }
+
+  #from {
+    margin: 0px;
+    width: 18vw;
+  }
+
+  #FromTo {
+    margin: 0px 2vw;
+  }
+
+  #to {
+    margin: 0px;
+    width: 18vw;
+  }
+
+  #Alert {
+    left: 21vw;
+    width: 50vw;
+  }
+}
+
+@media (max-width: 480px) {
+  #Alert {
+    left: 18vw;
+  }
+}
+@media (max-width: 380px) {
+  .btn {
+    margin: 0vw 1.5vw;
+    padding: 3.5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .btn {
+    margin: 0vw 1vw;
+    padding: 5px;
+    font-size: 11px;
+  }
+
+  .btn:hover {
+  scale: 1.1;
+  cursor: pointer;
+  font-size: 11.5px;
+}
+}

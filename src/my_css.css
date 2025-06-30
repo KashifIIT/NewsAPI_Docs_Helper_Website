@@ -1,0 +1,53 @@
+/* center can be used to center any tag, it can be either inline or block. */
+
+.center { 
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+
+/* To make a block component into inline */
+
+.inline {
+  display: inline;
+}
+
+/*To make a tag - block*/
+
+.block {
+  display: block;
+}
+
+/*To make a tag - inline-block*/
+
+.inlineBlock {
+  display: inline-block;
+}
+
+/*To provide margin between Label and Input tag
+if they are placed vertically*/
+
+.labelVertical {
+  display: block; /*As inline element doesn't respect margin-top/bottom*/
+  margin-bottom: 7px;
+}
+
+.VerticalLabel {
+  display: block; /*As inline element doesn't respect margin-top/bottom*/
+  margin-bottom: 7px;
+}
+
+.HorizontalLabel {
+  margin-right: 10px;
+}
+
+/* Styling for arrow sign in Select tag */
+
+.SelectArrow {
+  position: absolute;
+  left: 210px;
+  top: 6px;
+  color: black;
+  cursor: pointer;
+  transition: transform 650ms;
+}
