@@ -17,11 +17,10 @@ export default function QPage() {
 
     <div>
       <label className="VerticalLabel" htmlFor="THQvalue">
-        1. Enter the keywords or phrases that you want to see in the articles:
+        1. Enter the keywords or phrases that you want to see in the articles:<span style={{color: 'red'}}>*</span>
         <br />
         {THQvalue === "" ? null : (
           <span>
-            <br />
             <b>q={THQvalue}</b>
           </span>
         )}

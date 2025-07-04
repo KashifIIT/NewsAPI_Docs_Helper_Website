@@ -43,7 +43,7 @@ export default function SecondPage() {
       <div className="VerticalLabel">
         Where you want to find these searched keyword(s) or phrases in articles?:
         <br />
-        <i>byDefault: All fields are searched.</i>
+        <i>By default: All fields are searched.</i>
         <br />
         {Title === 1 || Content === 1 || Description === 1 ? (
           <b>

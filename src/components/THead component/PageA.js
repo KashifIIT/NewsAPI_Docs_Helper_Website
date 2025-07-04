@@ -22,7 +22,7 @@ export default function PageA() {
     <div>
     <div>
       <div className="VerticalLabel">
-        1. Choose category from which you want news articles: 
+        1. Choose category from which you want news articles:<span style={{color: 'red'}}>*</span>
         <br />
         {Category === ""? null : <b>category={Category}</b>}
       </div>

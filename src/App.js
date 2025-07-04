@@ -70,7 +70,7 @@ function App() {
     style={Page === 5? {height: '145vh'} : {}} >
       
       <div id="MainDiv">
-        <h3 className="center">
+        <h3 className="center" style={{fontSize: '17px'}}>
           Learn to use NewsAPI faster than ever before!
         </h3>
         <br />

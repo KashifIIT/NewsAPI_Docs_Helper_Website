@@ -67,6 +67,9 @@ const useStore = create((set) => ({
   
   TH2PageNo: "",
   setTH2PageNo: (TH2PageNo) => set({ TH2PageNo }),
+
+  StyleOfLoadingDiv: {width: '0px'},
+  setStyleOfLoadingDiv: (StyleOfLoadingDiv) => set({ StyleOfLoadingDiv }),
 }));
 
 /*Possible prototype for var and setVar in create funcn:

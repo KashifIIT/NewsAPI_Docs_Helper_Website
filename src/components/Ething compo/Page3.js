@@ -341,7 +341,7 @@ export default function ThirdPage() {
           <label for="InputSources" className="labelVertical">
             Select domain(s) from which you want news articles:
             <br />
-            <i>byDefault: All domains are searched.</i>
+            <i>By default: All domains are searched.</i>
             <b style={{ wordBreak: "break-word" }}>
               {" "}
               {SourceArray.length === 0? null :"&domain="}
@@ -429,7 +429,7 @@ export default function ThirdPage() {
           <label for="InputSources" className="labelVertical">
             Exclude domain(s) from which you don't want news articles:
             <br />
-            <i>byDefault: None of them is excluded.</i>
+            <i>By default: None of them is excluded.</i>
             <b style={{ wordBreak: "break-word" }}>
               {" "}
               {excludeDomainArray.length === 0? null : "&excludeDomain="}

@@ -8,7 +8,7 @@ export default function FirstPage() {
   return (
     <div>
       <label htmlFor="q" className="VerticalLabel">
-        1. Enter keywords or phrases to search for in the article title or body: 
+        1. Enter keywords or phrases to search for in the article title or body:<span style={{color: 'red'}}>*</span>
         <br />
         <i>(It's a must field, you can neither add further filters nor generate the link while leaving this field empty.)</i>
         <br />

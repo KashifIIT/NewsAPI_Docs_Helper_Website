@@ -67,6 +67,12 @@ export default function TopHeadline() {
     });
   }
 
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      if(THQvalue !== "" || Category !== "") GenerateLink();
+    }
+  })
+
   return (
     <div>
       <div id="Alert" style={StyleOfAlert}>

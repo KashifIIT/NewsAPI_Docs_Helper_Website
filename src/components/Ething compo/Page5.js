@@ -9,9 +9,9 @@ export default function Page5() {
     <div>
       <div>
         <label htmlFor="PageSize" className="VerticalLabel">
-          How many number of articles you want to return per page:
+          How many articles do you want to return per page?:
           <br />
-          <i>ByDefault: All articles are returned on a single page.</i>
+          <i>By default: All articles are returned on a single page.</i>
           <br />
           <b>{PageSize === "" ? null : "&pageSize=" + PageSize}</b>
         </label>
@@ -28,10 +28,10 @@ export default function Page5() {
         <br />
 
         <label htmlFor="PageNo" className="VerticalLabel">
-          You can naviagate through pages with this input:
+          Enter the page number to view:
           <br />
           <i>
-            ByDefault: You are on page 1.
+            By default: You are on page 1.
           </i>
           <br />
           <b>

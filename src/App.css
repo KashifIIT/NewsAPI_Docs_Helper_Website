@@ -17,6 +17,7 @@ h3 {
 }
 
 #MainDiv {
+  position: relative;
   border: 2px solid;
   padding: 35px 25px;
   width: 23vw;
@@ -101,6 +102,12 @@ h3 {
   padding: 4px 7px;
 }
 
+.Input:focus {
+  outline: none;
+  border: 1px solid #2a69bc;
+  box-shadow: #2a69bc 0px 0px 5px;
+}
+
 #Alert {
   /* visibility: hidden; It is getting applied dynamically.*/
   word-break: break-word;
@@ -121,7 +128,7 @@ h3 {
 }
 
 #AlertUrl {
-  position: relative;  
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,6 +138,17 @@ h3 {
   border-radius: 7px;
   background: #1f508f;
   color: white;
+}
+
+#LoadingDiv {
+  position: absolute;
+  top: 0.1px;
+  left: 2.5vw;
+  height: 2.5px;
+  border: 0.5px solid black;
+  border-radius: 0px 0px 3px 3px;
+  background-color: #2a69bc;
+  transition: width 1.5s ease-out;
 }
 
 @media (min-width: 1201px) and (max-width: 2000px) {
@@ -152,6 +170,15 @@ h3 {
 
   #to {
     width: 110px;
+  }
+
+  #LoadingDiv {
+    left: 2.5vw;
+  }
+
+  #Alert {
+    width: 25vw;
+    left: 35.4vw;
   }
 }
 
@@ -179,6 +206,15 @@ h3 {
 
   .btn {
     margin: 0px 40px;
+  }
+
+  #LoadingDiv {
+    left: 1.5vw;
+  }
+
+  #Alert {
+    width: 22w;
+    left: 39vw;
   }
 }
 
@@ -209,9 +245,18 @@ h3 {
     width: 110px;
     margin: 0vw 1vw;
   }
+
+  #LoadingDiv {
+    left: 4vw;
+  }
+
+  #Alert {
+    width: 35vw;
+    left: 29vw;
+  }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 600px) {
   #StartingDiv {
     height: 100vh;
   }
@@ -243,33 +288,40 @@ h3 {
   }
 
   #Alert {
-    left: 21vw;
-    width: 50vw;
+    left: 29vw;
+    width: 35vw;
+  }
+
+  #LoadingDiv {
+    left: 5vw;
   }
 }
 
 @media (max-width: 480px) {
   #Alert {
-    left: 18vw;
+    width: 50vw;
+    left: 19vw;
   }
-}
-@media (max-width: 380px) {
-  .btn {
-    margin: 0vw 1.5vw;
-    padding: 3.5px;
+
+  #LoadingDiv {
+    left: 8vw;
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
   .btn {
-    margin: 0vw 1vw;
-    padding: 5px;
     font-size: 11px;
+    margin: 0vw 1vw;
+    padding: 3.5px;
   }
 
   .btn:hover {
-  scale: 1.1;
-  cursor: pointer;
-  font-size: 11.5px;
-}
+    scale: 1.1;
+    cursor: pointer;
+    font-size: 11.5px;
+  }
+
+  #LoadingDiv {
+    left: 8.5vw;
+  }
 }

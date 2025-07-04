@@ -87,7 +87,7 @@ export default function FourthPage() {
         <div className="VerticalLabel">
           1. Select date from which to which you want news articles :
           <br />
-          <i>byDefault: Articles are shown from the date you made your NewsAPI account to current date.</i>
+          <i>By default: Articles are shown from the date you made your NewsAPI account to current date.</i>
           <br />
           <b>
             {" "}
@@ -122,8 +122,8 @@ export default function FourthPage() {
 
       <div>
         <div className="VerticalLabel">
-          <div>2. Select language in which you want news articles:</div>
-          <i>byDefault: All languages returned.</i>
+          <div>2. Choose the language for your news articles:</div>
+          <i>By default: All languages returned.</i>
           <div>
             <b style={{ wordBreak: "break-word" }}>
               {Language === "" ? null : `&language=${Language}`}
@@ -200,9 +200,9 @@ export default function FourthPage() {
 
       <div>
         <div className="VerticalLabel">
-          3. Choose one for sorting Articles:
+          3. Select a sorting option for articles:
           <br />
-          <i>byDefault: Newest articles will come first. (publishedAt)</i>
+          <i>By default: Newest articles will come first. (publishedAt)</i>
           <b>{SortByValue === "" ? null : ` &sortBy=${SortByValue}`}</b>
         </div>
         <div style={{ position: "relative" }}>
