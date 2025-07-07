@@ -1,7 +1,7 @@
 import React from "react";
 import VarStore from "../../VarStore";
 
-export default function Page5() {
+export default function PageSizeQ() {
   let { TH2PageSize, setTH2PageSize } = VarStore();
   let { TH2PageNo, setTH2PageNo } = VarStore();
 
@@ -9,11 +9,18 @@ export default function Page5() {
     <div>
       <div>
         <label htmlFor="TH2PageSize" className="VerticalLabel">
-          How many number of articles you want to return per page:
-          <br />
-          <i>ByDefault: Only some articles are returned per page.</i>
-          <br />
-          <b>{TH2PageSize === "" ? null : "&pageSize=" + TH2PageSize}</b>
+          <div className="VerticalLabel">
+            <span className="step-number">3.</span>
+            <span className="MainLabel">
+              How many articles do you want to return per page?
+            </span>
+          </div>
+          <div className="VerticalLabel">
+            <i>By default: Only some articles are returned per page.</i>
+          </div>
+          <div className="VerticalLabel">
+            <b>{TH2PageSize === "" ? null : "&pageSize=" + TH2PageSize}</b>
+          </div>
         </label>
         <input
           value={TH2PageSize}
@@ -28,11 +35,18 @@ export default function Page5() {
         <br />
 
         <label htmlFor="TH2PageNo" className="VerticalLabel">
-          You can naviagate through pages with this input:
-          <br />
-          <i>ByDefault: You are on page 1.</i>
-          <br />
-          <b>{TH2PageNo === "" ? null : " &page=" + TH2PageNo}</b>
+          <div className="VerticalLabel">
+            <span className="step-number">4.</span>
+            <span className="MainLabel">
+              Enter the page number to view:
+            </span>
+          </div>
+          <div className="VerticalLabel">
+            <i>By default: You are on page 1.</i>
+          </div>
+          <div className="VerticalLabel">
+            <b>{TH2PageNo === "" ? null : " &page=" + TH2PageNo}</b>
+          </div>
         </label>
         <input
           type="number"

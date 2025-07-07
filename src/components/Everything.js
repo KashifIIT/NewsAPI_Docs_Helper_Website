@@ -215,7 +215,7 @@ export default function Everything() {
         </div>
       </div>
 
-      <div className="center">
+      <div className="center" style={{marginTop: '5px'}}>
         {" "}
         {/*For buttons*/}
         <button

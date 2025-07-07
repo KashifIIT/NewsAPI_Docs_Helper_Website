@@ -38,22 +38,22 @@ export default function TopHeadline() {
 
     if (THQvalue === "") {
       url += `category=${Category}`;
-      if (ApiKey === "") {
-        url += `&apiKey=REPLACE_WITH_YOUR_NEWS_API_KEY`;
-      } else {
-        url += `&apiKey=${ApiKey}`;
-      }
       if (TH1PageSize !== "") url += `&pageSize=${TH1PageSize}`;
       if (TH1PageNo !== "") url += `&page=${TH1PageNo}`;
-    } else {
-      url += `q=${THQvalue}`;
       if (ApiKey === "") {
         url += `&apiKey=REPLACE_WITH_YOUR_NEWS_API_KEY`;
       } else {
         url += `&apiKey=${ApiKey}`;
       }
+    } else {
+      url += `q=${THQvalue}`;
       if (TH2PageSize !== "") url += `&pageSize=${TH2PageSize}`;
       if (TH2PageNo !== "") url += `&page=${TH2PageNo}`;
+      if (ApiKey === "") {
+        url += `&apiKey=REPLACE_WITH_YOUR_NEWS_API_KEY`;
+      } else {
+        url += `&apiKey=${ApiKey}`;
+      }
     }
 
     setAlertValue1(

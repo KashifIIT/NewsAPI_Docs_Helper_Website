@@ -7,12 +7,12 @@ export default function FirstPage() {
 
   return (
     <div>
-      <label htmlFor="q" className="VerticalLabel">
-        1. Enter keywords or phrases to search for in the article title or body:<span style={{color: 'red'}}>*</span>
-        <br />
-        <i>(It's a must field, you can neither add further filters nor generate the link while leaving this field empty.)</i>
-        <br />
-        <b>q={qValue}</b>
+      <label htmlFor="q">
+        <div className="VerticalLabel"><span class="step-number">1.</span><span className="MainLabel">
+          Enter keywords or phrases to search for in the article title or body:<span style={{color: 'red'}}>*</span>
+        </span></div>
+        <i className="VerticalLabel">(It's a must field, you can neither add further filters nor generate the link while leaving this field empty.)</i>
+        <b className="VerticalLabel">q={qValue}</b>
       </label>
 
       <input
@@ -37,16 +37,16 @@ export default function FirstPage() {
       <br />
       <br />
 
-      <label htmlFor="api" className="VerticalLabel">
-        2. Enter your NewsAPI key <i>(Optional)</i> :
-        <br />
-        <b style={{wordBreak: 'break-all'}}>
+      <label htmlFor="api">
+        <div className="VerticalLabel"><span class="step-number">2.</span><span className="MainLabel">Enter your NewsAPI key <i>(Optional)</i>:
+        </span></div>
+        <b className="VerticalLabel" style={{wordBreak: 'break-all'}}>
           &apiKey=
         {
           ApiKey === ""? "REPLACE_WITH_YOUR_NEWS_API_KEY" : ApiKey
         }
         </b>
-        <div>Don't have? - <a target="_blank" href="https://newsapi.org/register">Get one</a></div>
+        <div className="VerticalLabel">Don't have? - <a target="_blank" href="https://newsapi.org/register">Get one</a></div>
       </label>
 
       <input

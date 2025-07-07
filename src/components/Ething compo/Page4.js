@@ -1,23 +1,11 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import VarStore from "../../VarStore";
 
 export default function FourthPage() {
   let ArrayOfLangauges = [
-    "Arabic (ar)",
-    "German (de)",
-    "English (en)",
-    "Spanish (es)",
-    "French (fr)",
-    "Hebrew (he)",
-    "Italian (it)",
-    "Dutch (nl)",
-    "Norwegian (no)",
-    "Portuguese (pt)",
-    "Russian (ru)",
-    "Swedish (sv)",
-    "Urdu (ur)",
-    "Chinese (zh)",
+    "Arabic (ar)", "German (de)", "English (en)", "Spanish (es)", "French (fr)",
+    "Hebrew (he)", "Italian (it)", "Dutch (nl)", "Norwegian (no)", "Portuguese (pt)",
+    "Russian (ru)", "Swedish (sv)", "Urdu (ur)", "Chinese (zh)"
   ];
 
   let ArrayOfSortBy = [
@@ -55,7 +43,6 @@ export default function FourthPage() {
     let shikaar = document.getElementById(ix);
     let value = shikaar.value;
     let StoredValue = value[value.length - 1 - 2] + value[value.length - 1 - 1];
-
     if (check === 1 ? !shikaar.checked : shikaar.checked) {
       shikaar.checked = false;
       setLanguage("");
@@ -66,12 +53,9 @@ export default function FourthPage() {
   }
 
   function SelectFunc2(ix, check) {
-
     setStyleOfOptionDiv2({ ...StyleOfOptionDiv2, display: "none" });
     setSelectTag2(0);
-
     let Shikaar = document.getElementById("Sort" + ix);
-
     if (check ? Shikaar.checked : !Shikaar.checked) {
       Shikaar.checked = true;
       setSortByValue(ActualSortBy[ix]);
@@ -85,17 +69,20 @@ export default function FourthPage() {
     <div>
       <div>
         <div className="VerticalLabel">
-          1. Select date from which to which you want news articles :
-          <br />
+          <span className="step-number">6.</span>
+          <span className="MainLabel">
+            Select date from which to which you want news articles:
+          </span>
+        </div>
+        <div className="VerticalLabel">
           <i>By default: Articles are shown from the date you made your NewsAPI account to current date.</i>
-          <br />
+        </div>
+        <div className="VerticalLabel">
           <b>
-            {" "}
-            {From === ""? null : `&from=${From}`}
-            {To === ""? null : `&to=${To}`}
+            {From === "" ? null : `&from=${From}`}
+            {To === "" ? null : `&to=${To}`}
           </b>
         </div>
-
         <label htmlFor="from" className="HorizontalLabel">
           from
         </label>
@@ -111,26 +98,31 @@ export default function FourthPage() {
           to
         </label>
         <input 
-        className="btn"
-        id="to" 
-        value={To}
-        type="date" 
-        onChange={(e) => setTo(e.target.value)}/>
+          className="btn"
+          id="to" 
+          value={To}
+          type="date" 
+          onChange={(e) => setTo(e.target.value)}
+        />
       </div>
 
       <br />
 
       <div>
         <div className="VerticalLabel">
-          <div>2. Choose the language for your news articles:</div>
-          <i>By default: All languages returned.</i>
-          <div>
-            <b style={{ wordBreak: "break-word" }}>
-              {Language === "" ? null : `&language=${Language}`}
-            </b>
-          </div>
+          <span className="step-number">7.</span>
+          <span className="MainLabel">
+            Choose the language for your news articles:
+          </span>
         </div>
-
+        <div className="VerticalLabel">
+          <i>By default: All languages returned.</i>
+        </div>
+        <div className="VerticalLabel">
+          <b style={{ wordBreak: "break-word" }}>
+            {Language === "" ? null : `&language=${Language}`}
+          </b>
+        </div>
         <div style={{ position: "relative" }}>
           <div
             className="SelectDiv"
@@ -138,14 +130,11 @@ export default function FourthPage() {
               if (SelectTag1 === 1) {
                 setSelectTag1(0);
                 setStyleOfOptionDiv1({ ...StyleOfOptionDiv1, display: "none" });
-                setSelectArrow1({transform: 'rotate(0deg)'})
+                setSelectArrow1({ transform: 'rotate(0deg)' });
               } else {
                 setSelectTag1(1);
-                setStyleOfOptionDiv1({
-                  ...StyleOfOptionDiv1,
-                  display: "block",
-                });
-                setSelectArrow1({transform: 'rotate(90deg)'})
+                setStyleOfOptionDiv1({ ...StyleOfOptionDiv1, display: "block" });
+                setSelectArrow1({ transform: 'rotate(90deg)' });
               }
             }}
           >
@@ -154,44 +143,37 @@ export default function FourthPage() {
               {"\u276F"}
             </span>
           </div>
-
           <div className="OptionDiv" style={StyleOfOptionDiv1}>
             <div className="Options" 
-            onClick={() => {
-              setLanguage("");
-              for(let i = 1; i<= ArrayOfLangauges.length; i++) {
-                let check = document.getElementById(i-1).checked
-                if(check === true) 
-                  document.getElementById(i-1).checked = false;
-              }
-            }}>
+              onClick={() => {
+                setLanguage("");
+                for(let i = 1; i<= ArrayOfLangauges.length; i++) {
+                  let check = document.getElementById(i-1).checked;
+                  if(check === true) 
+                    document.getElementById(i-1).checked = false;
+                }
+              }}>
               <div className="center">Clear</div>
             </div>
-            {ArrayOfLangauges.map((value, ix) => {
-              return (
-                <div className="Options" onClick={() => {
-                      SelectFunc1(ix, 0);
-                      setSelectTag1(0);
-                      setStyleOfOptionDiv1({...StyleOfOptionDiv1, display: "none"})
-                      setSelectArrow1({transform: 'rotate(0deg)'})
-                    }}>
-                  <input
-                    id={ix}
-                    type="radio"
-                    name="Language"
-                    value={value}
-                    onClick={() => {
-                      SelectFunc1(ix, 1);
-                    }}
-                    style={{ marginRight: "8px" }}
-                  />
-                  <span
-                  >
-                    {value}
-                  </span>
-                </div>
-              );
-            })}
+            {ArrayOfLangauges.map((value, ix) => (
+              <div className="Options" onClick={() => {
+                SelectFunc1(ix, 0);
+                setSelectTag1(0);
+                setStyleOfOptionDiv1({...StyleOfOptionDiv1, display: "none"});
+                setSelectArrow1({ transform: 'rotate(0deg)' });
+              }} key={ix}>
+                <input
+                  id={ix}
+                  type="radio"
+                  name="Language"
+                  value={value}
+                  onClick={() => { SelectFunc1(ix, 1); }}
+                  style={{ marginRight: "8px" }}
+                  readOnly
+                />
+                <span>{value}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -200,10 +182,16 @@ export default function FourthPage() {
 
       <div>
         <div className="VerticalLabel">
-          3. Select a sorting option for articles:
-          <br />
+          <span className="step-number">8.</span>
+          <span className="MainLabel">
+            Select a sorting option for articles:
+          </span>
+        </div>
+        <div className="VerticalLabel">
           <i>By default: Newest articles will come first. (publishedAt)</i>
-          <b>{SortByValue === "" ? null : ` &sortBy=${SortByValue}`}</b>
+        </div>
+        <div className="VerticalLabel">
+          <b>{SortByValue === "" ? null : " &sortBy=" + SortByValue}</b>
         </div>
         <div style={{ position: "relative" }}>
           <div
@@ -212,56 +200,50 @@ export default function FourthPage() {
               if (SelectTag2 === 1) {
                 setSelectTag2(0);
                 setStyleOfOptionDiv2({ ...StyleOfOptionDiv2, display: "none" });
-                setSelectArrow2({transform: 'rotate(0deg)'});
+                setSelectArrow2({ transform: 'rotate(0deg)' });
               } else {
                 setSelectTag2(1);
-                setStyleOfOptionDiv2({
-                  ...StyleOfOptionDiv2,
-                  display: "block",
-                });
-                setSelectArrow2({transform: 'rotate(90deg)'});
+                setStyleOfOptionDiv2({ ...StyleOfOptionDiv2, display: "block" });
+                setSelectArrow2({ transform: 'rotate(90deg)' });
               }
             }}
           >
             Choose one
             <span className="SelectArrow" style={SelectArrow2}>
-              {"\u276F"} 
+              {"\u276F"}
             </span>
           </div>
-
           <div className="OptionDiv" style={StyleOfOptionDiv2}>
             <div className="Options">
-              <div 
-              className="center"
-              onClick={() => {
-                setSortByValue("");
-                for(let i = 1; i <= ArrayOfSortBy.length; i++) {
-                  let ix = i-1; 
-                  console.log("Sort" + ix)
-                  if(document.getElementById("Sort" + ix).checked) {
-                    document.getElementById("Sort" + ix).checked = false;
+              <div
+                className="center"
+                onClick={() => {
+                  setSortByValue("");
+                  for(let i = 1; i <= ArrayOfSortBy.length; i++) {
+                    let ix = i-1; 
+                    if(document.getElementById("Sort" + ix).checked) {
+                      document.getElementById("Sort" + ix).checked = false;
+                    }
                   }
-                }
-              }}>Clear</div>
+                }}>Clear</div>
             </div>
-            {ArrayOfSortBy.map((value, ix) => {
-              return (
-                <div className="Options" onClick={() => {
-                  SelectFunc2(ix, 0)
-                  setSelectTag2(0);
-                  setStyleOfOptionDiv2({ ...StyleOfOptionDiv2, display: "none" });
-                  setSelectArrow2({transform: 'rotate(0deg)'});
-                }}>
-                  <input
-                    type="radio"
-                    id={"Sort" + ix}
-                    name="hello"
-                    onClick={() => SelectFunc2(ix, 1)}
-                  />
-                  <span>{value}</span>
-                </div>
-              );
-            })}
+            {ArrayOfSortBy.map((value, ix) => (
+              <div className="Options" onClick={() => {
+                SelectFunc2(ix, 0);
+                setSelectTag2(0);
+                setStyleOfOptionDiv2({ ...StyleOfOptionDiv2, display: "none" });
+                setSelectArrow2({ transform: 'rotate(0deg)' });
+              }} key={ix}>
+                <input
+                  type="radio"
+                  id={"Sort" + ix}
+                  name="hello"
+                  onClick={() => SelectFunc2(ix, 1)}
+                  readOnly
+                />
+                <span>{value}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
