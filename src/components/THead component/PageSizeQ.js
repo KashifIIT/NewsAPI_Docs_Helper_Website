@@ -28,7 +28,17 @@ export default function PageSizeQ() {
           id="TH2PageSize"
           className="Input"
           placeholder="Enter number"
-          onChange={(e) => setTH2PageSize(e.target.value)}
+          onChange={(e) => {
+            let str = e.target.value;
+            for(let i = 0; i < str.length; i++) {
+            if(str[i] === " ") {
+              let start = str.slice(0, i);
+              let rem = str.slice(i+1, str.length);
+              str = start + "%20" + rem;
+            }
+          }
+          setTH2PageSize(e.target.value)
+        }}
         />
 
         <br />

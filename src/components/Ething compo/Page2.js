@@ -26,7 +26,7 @@ export default function SecondPage() {
         </div>
         <div className="VerticalLabel">
           {q2Value === "" ? null : (
-            <span>
+            <span style={{wordBreak: "break-all"}}>
               q={qValue}
               <b>{"-" + q2Value}</b>
             </span>
@@ -37,7 +37,17 @@ export default function SecondPage() {
         id="-q"
         className="Input"
         value={q2Value}
-        onChange={(e) => setq2Value(e.target.value)}
+        onChange={(e) => {
+          let str = e.target.value;
+          for(let i = 0; i < str.length; i++) {
+            if(str[i] === " ") {
+              let start = str.slice(0, i);
+              let rem = str.slice(i+1, str.length);
+              str = start + "%20" + rem;
+            }
+          }
+          setq2Value(str);
+        }}
         placeholder="Enter keyword or phrase"
         type="text"
       />

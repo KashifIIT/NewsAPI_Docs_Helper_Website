@@ -24,7 +24,7 @@ export default function QPage() {
           <div className="VerticalLabel">
             {THQvalue === "" ? null : (
               <span>
-                <b>q={THQvalue}</b>
+                <b style={{wordBreak: 'break-all'}}>q={THQvalue}</b>
               </span>
             )}
           </div>

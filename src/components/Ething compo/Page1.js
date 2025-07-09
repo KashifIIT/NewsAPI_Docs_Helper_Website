@@ -12,7 +12,7 @@ export default function FirstPage() {
           Enter keywords or phrases to search for in the article title or body:<span style={{color: 'red'}}>*</span>
         </span></div>
         <i className="VerticalLabel">(It's a must field, you can neither add further filters nor generate the link while leaving this field empty.)</i>
-        <b className="VerticalLabel">q={qValue}</b>
+        <b style={{wordBreak: 'break-all'}} className="VerticalLabel">q={qValue}</b>
       </label>
 
       <input
@@ -38,7 +38,7 @@ export default function FirstPage() {
       <br />
 
       <label htmlFor="api">
-        <div className="VerticalLabel"><span class="step-number">2.</span><span className="MainLabel">Enter your NewsAPI key <i>(Optional)</i>:
+        <div className="VerticalLabel"><span class="step-number">2.</span><span className="MainLabel">Enter your NewsAPI key:
         </span></div>
         <b className="VerticalLabel" style={{wordBreak: 'break-all'}}>
           &apiKey=
